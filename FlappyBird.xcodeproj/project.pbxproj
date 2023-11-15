@@ -11,9 +11,8 @@
 		464A36B12B05178D00F68A8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A36B02B05178D00F68A8C /* ContentView.swift */; };
 		464A36B32B05178E00F68A8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464A36B22B05178E00F68A8C /* Assets.xcassets */; };
 		464A36B62B05178E00F68A8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464A36B52B05178E00F68A8C /* Preview Assets.xcassets */; };
-		464A36C02B05178E00F68A8C /* FlappyBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A36BF2B05178E00F68A8C /* FlappyBirdTests.swift */; };
-		464A36CA2B05178E00F68A8C /* FlappyBirdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A36C92B05178E00F68A8C /* FlappyBirdUITests.swift */; };
-		464A36CC2B05178E00F68A8C /* FlappyBirdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A36CB2B05178E00F68A8C /* FlappyBirdUITestsLaunchTests.swift */; };
+		464A36D92B051CB400F68A8C /* BirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A36D82B051CB400F68A8C /* BirdView.swift */; };
+		464A36DB2B051EFA00F68A8C /* PipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A36DA2B051EFA00F68A8C /* PipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +39,9 @@
 		464A36B22B05178E00F68A8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		464A36B52B05178E00F68A8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		464A36BB2B05178E00F68A8C /* FlappyBirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyBirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		464A36BF2B05178E00F68A8C /* FlappyBirdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyBirdTests.swift; sourceTree = "<group>"; };
 		464A36C52B05178E00F68A8C /* FlappyBirdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlappyBirdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		464A36C92B05178E00F68A8C /* FlappyBirdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyBirdUITests.swift; sourceTree = "<group>"; };
-		464A36CB2B05178E00F68A8C /* FlappyBirdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlappyBirdUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		464A36D82B051CB400F68A8C /* BirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdView.swift; sourceTree = "<group>"; };
+		464A36DA2B051EFA00F68A8C /* PipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				464A36AD2B05178D00F68A8C /* FlappyBird */,
-				464A36BE2B05178E00F68A8C /* FlappyBirdTests */,
-				464A36C82B05178E00F68A8C /* FlappyBirdUITests */,
 				464A36AC2B05178D00F68A8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +92,8 @@
 			children = (
 				464A36AE2B05178D00F68A8C /* FlappyBirdApp.swift */,
 				464A36B02B05178D00F68A8C /* ContentView.swift */,
+				464A36D82B051CB400F68A8C /* BirdView.swift */,
+				464A36DA2B051EFA00F68A8C /* PipeView.swift */,
 				464A36B22B05178E00F68A8C /* Assets.xcassets */,
 				464A36B42B05178E00F68A8C /* Preview Content */,
 			);
@@ -108,23 +106,6 @@
 				464A36B52B05178E00F68A8C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		464A36BE2B05178E00F68A8C /* FlappyBirdTests */ = {
-			isa = PBXGroup;
-			children = (
-				464A36BF2B05178E00F68A8C /* FlappyBirdTests.swift */,
-			);
-			path = FlappyBirdTests;
-			sourceTree = "<group>";
-		};
-		464A36C82B05178E00F68A8C /* FlappyBirdUITests */ = {
-			isa = PBXGroup;
-			children = (
-				464A36C92B05178E00F68A8C /* FlappyBirdUITests.swift */,
-				464A36CB2B05178E00F68A8C /* FlappyBirdUITestsLaunchTests.swift */,
-			);
-			path = FlappyBirdUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464A36D92B051CB400F68A8C /* BirdView.swift in Sources */,
 				464A36B12B05178D00F68A8C /* ContentView.swift in Sources */,
+				464A36DB2B051EFA00F68A8C /* PipeView.swift in Sources */,
 				464A36AF2B05178D00F68A8C /* FlappyBirdApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464A36C02B05178E00F68A8C /* FlappyBirdTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464A36CA2B05178E00F68A8C /* FlappyBirdUITests.swift in Sources */,
-				464A36CC2B05178E00F68A8C /* FlappyBirdUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
