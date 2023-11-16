@@ -23,6 +23,7 @@ struct GameView: View {
     @State private var gameState: GameState = .ready
     
     private var birdSize: CGFloat = 80
+    private let birdRadius: CGFloat = 13
     
     private let pipeWidth: CGFloat = 100
     private let pipeSpacing: CGFloat = 100
@@ -30,6 +31,7 @@ struct GameView: View {
     private let gravity: CGFloat = 1000
     private let pipePosition: CGFloat = 300
     private let groundHeight: CGFloat = 100
+    
     private let highScore = 0
     
     private let timer = Timer.publish(
@@ -141,10 +143,10 @@ struct GameView: View {
     private func checkCollisions(geometry: GeometryProxy) -> Bool {
         // Создаем прямоугольник вокруг птицы
         let birdFrame = CGRect(
-            x: birdPosition.x - birdSize / 2,
-            y: birdPosition.y - birdSize / 2,
-            width: birdSize,
-            height: birdSize
+            x: birdPosition.x - birdRadius / 2,
+            y: birdPosition.y - birdRadius / 2,
+            width: birdRadius,
+            height: birdRadius
         )
         
         // Создаем прямоугольник вокруг верхнего столба
