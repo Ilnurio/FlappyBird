@@ -12,12 +12,15 @@ enum GameState {
 }
 
 struct GameView: View {
+    @AppStorage(wrappedValue: 0, "highScore") private var highScore: Int
+    
     @State private var birdVelocity = CGVector(dx: 0, dy: 0)
     @State private var birdPosition = CGPoint(x: 100, y: 300)
     
     @State private var pipeOffset: CGFloat = 0
     @State private var topPipeHeight = CGFloat.random(in: 100...500)
     
+    @State private var passedPipe = false
     @State private var scores = 0
     @State private var lastUpdateTime = Date()
     @State private var gameState: GameState = .ready
@@ -32,7 +35,6 @@ struct GameView: View {
     private let pipePosition: CGFloat = 300
     private let groundHeight: CGFloat = 100
     
-    private let highScore = 0
     
     private let timer = Timer.publish(
         every: 0.01,
@@ -97,6 +99,8 @@ struct GameView: View {
                     if checkCollisions(geometry: geometry) {
                         gameState = .stopped
                     }
+                    
+                    updateScores(geometry: geometry)
                     
                     lastUpdateTime = currentTime
                 }
@@ -177,6 +181,19 @@ struct GameView: View {
         if pipeOffset <= -geometry.size.width - pipeWidth {
             pipeOffset = 0
             topPipeHeight = CGFloat.random(in: 100...500)
+        }
+    }
+    
+    private func updateScores(geometry: GeometryProxy) {
+        if pipeOffset + pipeWidth + geometry.size.width < birdPosition.x && !passedPipe {
+            scores += 1
+            
+            if scores > highScore {
+                highScore = scores
+            }
+            passedPipe = true
+        } else if pipeOffset + geometry.size.width > birdPosition.x {
+            passedPipe = false
         }
     }
     
